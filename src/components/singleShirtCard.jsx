@@ -25,7 +25,7 @@ export default function SingleShirtCard({ shirt }) {
             </div>
             <div className="d-flex flex-wrap">
                 {
-                    shirt.sizes.map(size=> <Button>{size}</Button>)
+                    shirt.sizes.map((size)=> <Button key={toString(Math.floor(Math.random() * 999)) + size}>{size}</Button>)
                 }
             </div>
             <div className="d-flex flex-wrap">

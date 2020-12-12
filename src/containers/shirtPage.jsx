@@ -33,7 +33,7 @@ export default function ShirtPage() {
   );
   const renderReviews = () =>
     reviews.map((review) => (
-      <div>
+      <div key={review.name + toString(Math.floor(Math.random() * 999))}>
         <h5>{review.name}</h5>
         <p>{review.review}</p>
       </div>
@@ -68,8 +68,8 @@ export default function ShirtPage() {
             <div className="shirtCardImg-blue"></div>
           </div>
           <div className="d-flex flex-wrap">
-            {shirt.sizes.map((size) => (
-              <Button>{size}</Button>
+            {shirt.sizes.map((size, index) => (
+              <Button key={size + toString(Math.floor(Math.random() * 999))}>{size}</Button>
             ))}
           </div>
           <Modal
