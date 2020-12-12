@@ -14,8 +14,8 @@ export default function MainNavbar() {
                     <NavLink to="/shirts" className="nav-link">
                         Shirts
                     </NavLink>
-                    <NavLink to="/dresses" className="nav-link">
-                        Dresses
+                    <NavLink to="/cart" className="nav-link">
+                        Cart
                     </NavLink>
                 </Nav>
             </Navbar.Collapse>
