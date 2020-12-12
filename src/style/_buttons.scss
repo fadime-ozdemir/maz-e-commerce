@@ -1,0 +1,21 @@
+@mixin primaryBtn {
+    background-color: $primaryColor;
+    color: $lightColor;
+    width: 30%;
+    min-height: 2.6rem;
+    border: 0;
+    border-radius: $borderRadius;
+    outline: none;
+  
+    &:hover,
+    &:disabled {
+      background-color: $secondaryColor;
+    }
+  }
+  
+  @mixin normalLink {
+    color: $primaryColor;
+    &:hover {
+      color: $primaryColor;
+    }
+  }
