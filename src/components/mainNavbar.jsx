@@ -6,7 +6,7 @@ export default function MainNavbar() {
     return (
         <Navbar collapseOnSelect expand="lg">
             <NavLink to="/" className="navbar-brand">
-                <Navbar.Brand>Home</Navbar.Brand>
+                <Navbar.Brand>Bibi's</Navbar.Brand>
             </NavLink>
                 <Navbar.Toggle aria-controls="responsive-navbar-nav"/>
                 <Navbar.Collapse id="responsive-navbar-nav">
