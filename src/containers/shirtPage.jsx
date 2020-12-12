@@ -18,6 +18,7 @@ const shirt = {
   price: "4.5 $",
   colors: ["blue", "white"],
   sizes: ["XXL", "XL", "M"],
+  stock: 5
 };
 const similarShirts = [
   {
@@ -64,9 +65,17 @@ export default function ShirtPage() {
 
   const [showAddCart, setShowAddCart] = useState(false);
   const [cart, setCart] = useState([]);
+  const [stock, setStock] = useState(shirt.stock);
+  const [quantity, setQuantity] = useState(1);
+
   const addToCart = () => {
     setShowAddCart(true);
     setCart((prevState) => [...prevState, shirt]);
+    setStock(prevState=> {
+      if(stock===0){ return 0};
+      return prevState-quantity;
+    });  
+    setQuantity(1);
   };
 
   const [show, setShow] = useState(false);
@@ -77,13 +86,12 @@ export default function ShirtPage() {
   };
 
   const [inputs, setInputs] = useState({ name: "", review: "" });
-  console.log(fav);
-
   const handleSubmit = (e) => {
     e.preventDefault();
     setReviews((prevState) => [...prevState, inputs]);
     setInputs({ name: "", review: "" });
   };
+
   return (
     <Container>
       <Row>
@@ -103,6 +111,11 @@ export default function ShirtPage() {
                 {size}
               </Button>
             ))}
+          </div>
+          <div>
+          <label for="quantity">Quantity:</label>
+            <input type="number" id="quantity" name="quantity"
+                  min="1" max={stock} value={quantity} onChange={(e)=>setQuantity(e.target.value)}></input>
           </div>
           <Modal
             size="sm"
@@ -138,7 +151,7 @@ export default function ShirtPage() {
               </div>
             </Modal.Body>
           </Modal>
-          <Button onClick={addToCart}>Add to cart</Button>
+          <Button onClick={addToCart} disabled={ stock === 0?  true : false }>Add to cart</Button>
         </Col>
       </Row>
       <Row>

@@ -8,7 +8,7 @@ export default function Header() {
         <Container>
             <h1>Bibi's store</h1>
             <p>
-                Make a gift for you today!
+                Make a gift for yourself today!
             </p>
             <Link to="/shirts">
                 <Button>See our shirts &#8594;</Button>

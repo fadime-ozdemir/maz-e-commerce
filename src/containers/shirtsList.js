@@ -7,42 +7,48 @@ const shirtsList= [
         name: "ShirtA",
         price: "4.5 $",
         colors: ["blue", "white"],
-        sizes: ["XXL", "XL","M"]
+        sizes: ["XXL", "XL","M"],
+        stock: 5
     },
     {
         img: [white, blue],
         name: "ShirtB",
         price: "4.5 $",
         colors: ["blue", "white"],
-        sizes: ["XXL", "XL","M"]
+        sizes: ["XXL", "XL","M"],
+        stock: 5
     },
     {
         img: [white, blue],
         name: "ShirtC",
         price: "4.5 $",
         colors: ["blue", "white"],
-        sizes: ["XXL", "XL","M"]
+        sizes: ["XXL", "XL","M"],
+        stock: 5
     },
     {
         img: [white, blue],
         name: "ShirtD",
         price: "4.5 $",
         colors: ["blue", "white"],
-        sizes: ["XXL", "XL","M"]
+        sizes: ["XXL", "XL","M"],
+        stock: 5
     },
     {
         img:[white, blue],
         name: "ShirtE",
         price: "4.5 $",
         colors: ["blue", "white"],
-        sizes: ["XXL", "XL","M"]
+        sizes: ["XXL", "XL","M"],
+        stock: 5
     },
     {
         img: [white, blue],
         name: "ShirtF",
         price: "4.5 $",
         colors: ["blue", "white"],
-        sizes: ["XXL", "XL","M"]
+        sizes: ["XXL", "XL","M"],
+        stock: 5
     }
 ]
 
