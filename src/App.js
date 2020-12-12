@@ -1,4 +1,5 @@
 import React from "react";
+import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 import {
   BrowserRouter as Router,
@@ -13,9 +14,9 @@ import ShirtsCategory from "./containers/shirtsCategory";
 
 function App() {
   return (
-    <Router>
+    <Router className="App">
       <MainNavbar />
-      <Switch className="App">
+      <Switch>
           <Route path="/shirts">
             <ShirtsCategory />
           </Route>
