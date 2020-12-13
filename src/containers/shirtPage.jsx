@@ -89,6 +89,8 @@ export default function ShirtPage() {
     setFav((prevState) => [...prevState, shirt]);
   };
 
+  console.log( fav, cart );
+  
   const [inputs, setInputs] = useState({ name: "", review: "" });
   const handleSubmit = (e) => {
     e.preventDefault();
