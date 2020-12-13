@@ -11,6 +11,7 @@ import {
   Form,
   Modal,
 } from "react-bootstrap";
+import "./shirtPage.scss";
 
 const shirt = {
   img: [white, blue],
@@ -47,7 +48,8 @@ const similarShirts = [
 export default function ShirtPage() {
   const white = shirt.img[0];
   const blue = shirt.img[1];
-
+  const [colorShirt, setColorShirt] = useState(white);
+  const [size, setSize] = useState("");
   const [reviews, setReviews] = useState([
     {
       name: "Anon",
@@ -98,24 +100,42 @@ export default function ShirtPage() {
     <Container>
       <Row>
         <Col>
-          <Image fluid src={white} alt="sample product" />
+          <Image
+            fluid
+            className="singlePageImg my-5"
+            src={colorShirt}
+            alt="sample product"
+          />
         </Col>
-        <Col className="flex-column">
+        <Col className="flex-column my-5 singlePageDetails">
           <h2>{shirt.name}</h2>
           <p>{shirt.price}</p>
-          <div className="d-flex">
-            <div className="shirtCardImg-white"></div>
-            <div className="shirtCardImg-blue"></div>
+          <div className="d-flex justify-content-center">
+            <div
+              className="shirtCardImg-white"
+              onClick={() => setColorShirt(white)}
+            ></div>
+            <div
+              className="shirtCardImg-blue"
+              onClick={() => setColorShirt(blue)}
+            ></div>
           </div>
-          <div className="d-flex flex-wrap">
+          <div className="d-flex flex-wrap justify-content-center">
             {shirt.sizes.map((size, index) => (
-              <Button key={size + toString(Math.floor(Math.random() * 999))}>
+              <Button
+                className="shirtCardSize shadow-none px-3 mx-3 mb-2 btnSecondary"
+                key={size + toString(Math.floor(Math.random() * 999))}
+                onClick={() => setSize(size)}
+              >
                 {size}
               </Button>
             ))}
           </div>
-          <div>
-            <label for="quantity">Quantity:</label>
+          {size ? <p>Your chosen size is {size}</p> : null}
+          <div className="mx-3">
+            <label for="quantity" className="mr-3">
+              Quantity:
+            </label>
             <input
               type="number"
               id="quantity"
@@ -136,7 +156,9 @@ export default function ShirtPage() {
               <Modal.Title id="fav">Saved in favourites</Modal.Title>
             </Modal.Header>
           </Modal>
-          <Button onClick={addFav}>Add to favourite</Button>
+          <Button onClick={addFav} className="btnSecondary shadow-none mr-1">
+            Add to favourite
+          </Button>
           <Modal
             size="lg"
             show={showAddCart}
@@ -167,7 +189,11 @@ export default function ShirtPage() {
               </div>
             </Modal.Body>
           </Modal>
-          <Button onClick={addToCart} disabled={stock === 0 ? true : false}>
+          <Button
+            onClick={addToCart}
+            disabled={stock === 0 ? true : false}
+            className="ml-1 btnPrimary shadow-none"
+          >
             Add to cart
           </Button>
         </Col>
