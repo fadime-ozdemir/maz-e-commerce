@@ -22,5 +22,7 @@
 
     .btn-primary {
         @include primaryBtn;
+        min-height: 2.6rem;
+        width: 15%;
     }
 }

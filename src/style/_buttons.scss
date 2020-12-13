@@ -1,8 +1,6 @@
 @mixin primaryBtn {
     background-color: $primaryColor;
     color: $primaryColor-light;
-    min-height: 2.6rem;
-    width: 15%;
     border: 0;
     border-radius: $borderRadius;
     outline: none;
@@ -11,10 +9,30 @@
     &:disabled {
       background-color: $secondaryColor;
       color: $primaryColor;
+      border-color: $secondaryColor;
     }
     
-    &:not(:disabled):not(.disabled):active {
+    &:not(:disabled):not(.disabled):active,
+    &:focus {
       background-color: $primaryColor;
       color: $secondaryColor;
     }
   }
+
+  @mixin secondaryBtn {
+    background-color: transparent;
+    color: $primaryColor-light;
+    border: 1px solid $primaryColor-light;
+    border-radius: $borderRadius;
+    outline: none;
+  
+    &:hover,
+    &:disabled,
+    &:focus,
+    &:not(:disabled):not(.disabled):active {
+      background-color: $primaryColor-light;
+      border-color: $primaryColor-light;
+      color: $primaryColor;
+      outline: none;
+    }
+  } 

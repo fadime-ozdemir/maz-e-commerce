@@ -5,7 +5,7 @@ import "./header.scss";
 
 export default function Header() {
   return (
-    <Jumbotron fluid className="header d-flex align-items-center justify-content-center">
+    <Jumbotron fluid className="header d-flex align-items-center justify-content-center mb-0">
         <Container>
             <h1 className="headerTitle">Bibi's store</h1>
             <p>
