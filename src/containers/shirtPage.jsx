@@ -21,6 +21,7 @@ const shirt = {
   sizes: ["XXL", "XL", "M"],
   stock: 5,
 };
+
 const similarShirts = [
   {
     img: [white, blue],
@@ -69,7 +70,6 @@ export default function ShirtPage() {
   const [cart, setCart] = useState([]);
   const [stock, setStock] = useState(shirt.stock);
   const [quantity, setQuantity] = useState(1);
-
   const addToCart = () => {
     setShowAddCart(true);
     setCart((prevState) => [...prevState, shirt]);
@@ -203,7 +203,7 @@ export default function ShirtPage() {
         {reviews ? renderReviews() : null}
       </Row>
       <Row>
-        <Col md={4} className="px-0">
+        <Col md={4} className="px-0 mx-2">
           <Form>
             <Form.Group>
               <Form.Label>Your Name</Form.Label>
@@ -234,6 +234,7 @@ export default function ShirtPage() {
               variant="primary"
               type="submit"
               onClick={(e) => handleSubmit(e)}
+              className="btnPrimary shadow-none mb-5"
             >
               Add your review
             </Button>

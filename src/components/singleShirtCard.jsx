@@ -51,9 +51,8 @@ export default function SingleShirtCard({ shirt }) {
       {size ? <p>Your chosen size is {size}</p> : null}
       <div className="d-flex flex-wrap justify-content-around">
         <Link to="/shirtA">
-          <Button className="btnSecondary shadow-none">See the shirt</Button>
+          <Button className="btnPrimary shadow-none">See the shirt</Button>
         </Link>
-        <Button className="btnPrimary shadow-none">Add to chart</Button>
       </div>
     </div>
   );
