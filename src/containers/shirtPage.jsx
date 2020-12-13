@@ -90,7 +90,7 @@ export default function ShirtPage() {
   };
 
   console.log( fav, cart );
-  
+
   const [inputs, setInputs] = useState({ name: "", review: "" });
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -135,7 +135,7 @@ export default function ShirtPage() {
           </div>
           {size ? <p>Your chosen size is {size}</p> : null}
           <div className="mx-3">
-            <label for="quantity" className="mr-3">
+            <label htmlFor="quantity" className="mr-3">
               Quantity:
             </label>
             <input
