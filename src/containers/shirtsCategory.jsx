@@ -2,7 +2,6 @@ import React from 'react'
 import shirtsList from "./shirtsList";
 import { Container } from "react-bootstrap";
 import  SingleShirtCard from "../components/singleShirtCard";
-import { Link } from "react-router-dom";
 import "./shirtsCategory.scss";
 
 export default function ShirtsCategory() {
