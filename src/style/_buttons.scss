@@ -36,3 +36,11 @@
       outline: none;
     }
   } 
+
+  @mixin link {
+    color: $primaryColor-dark;
+    &:hover {
+      text-decoration: none;
+      color: $primaryColor-light;
+    }
+  }

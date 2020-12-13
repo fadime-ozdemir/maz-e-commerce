@@ -17,3 +17,7 @@
 .singlePageDetails {
     text-align: center;
 }
+
+.primaryLink {
+    @include link;
+}

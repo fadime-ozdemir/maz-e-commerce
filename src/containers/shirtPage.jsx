@@ -97,7 +97,7 @@ export default function ShirtPage() {
   };
 
   return (
-    <Container>
+    <Container className="singlePage">
       <Row>
         <Col>
           <Image
@@ -167,15 +167,16 @@ export default function ShirtPage() {
           >
             <Modal.Header closeButton>
               <Modal.Title id="addChart">
-                Go to the <Link to="/cart">Cart</Link>
+                Go to the <Link to="/cart" className="primaryLink">Cart</Link>
               </Modal.Title>
             </Modal.Header>
             <Modal.Body>
               <p>You may also like</p>
-              <div className="d-flex">
+              <div className="d-flex" >
                 {similarShirts.map((shirt, index) => (
                   <Link
                     to="/"
+                    className="primaryLink mx-2"
                     key={
                       index +
                       shirt.name +
