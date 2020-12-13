@@ -1,0 +1,26 @@
+@import "../style/variables";
+@import "../style/buttons";
+@import "../style/bootstrapImports";
+
+.header {
+    height: 80vh;
+    background-image: linear-gradient(to right bottom, rgba($primaryColor-light, 0.8), rgba($primaryColor-dark, 0.8)) , url(./clark-street-mercantile-P3pI6xzovu0-unsplash.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: none;
+
+    .container {
+        text-align: center;
+        h1 {
+            font-family: $secondaryFontFamily;
+            font-weight: bold;
+            font-size: 2.5rem;
+            letter-spacing: .5rem;
+            text-transform: uppercase;
+        };
+    }
+
+    .btn-primary {
+        @include primaryBtn;
+    }
+}

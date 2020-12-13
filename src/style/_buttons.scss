@@ -1,8 +1,8 @@
 @mixin primaryBtn {
     background-color: $primaryColor;
-    color: $lightColor;
-    width: 30%;
+    color: $primaryColor-light;
     min-height: 2.6rem;
+    width: 15%;
     border: 0;
     border-radius: $borderRadius;
     outline: none;
@@ -10,6 +10,12 @@
     &:hover,
     &:disabled {
       background-color: $secondaryColor;
+      color: $primaryColor;
+    }
+    
+    &:not(:disabled):not(.disabled):active {
+      background-color: $primaryColor;
+      color: $secondaryColor;
     }
   }
   

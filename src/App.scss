@@ -1,1 +1,8 @@
 @import "~bootstrap/scss/bootstrap";
+@import "./style/variables";
+
+body {
+    font-family: $mainFontFamily;
+    color: $primaryColor;
+    background-color: $tertiaryColor;
+}

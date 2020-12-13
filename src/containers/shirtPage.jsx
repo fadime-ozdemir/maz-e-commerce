@@ -18,7 +18,7 @@ const shirt = {
   price: "4.5 $",
   colors: ["blue", "white"],
   sizes: ["XXL", "XL", "M"],
-  stock: 5
+  stock: 5,
 };
 const similarShirts = [
   {
@@ -71,10 +71,12 @@ export default function ShirtPage() {
   const addToCart = () => {
     setShowAddCart(true);
     setCart((prevState) => [...prevState, shirt]);
-    setStock(prevState=> {
-      if(stock===0){ return 0};
-      return prevState-quantity;
-    });  
+    setStock((prevState) => {
+      if (stock === 0) {
+        return 0;
+      }
+      return prevState - quantity;
+    });
     setQuantity(1);
   };
 
@@ -113,9 +115,16 @@ export default function ShirtPage() {
             ))}
           </div>
           <div>
-          <label for="quantity">Quantity:</label>
-            <input type="number" id="quantity" name="quantity"
-                  min="1" max={stock} value={quantity} onChange={(e)=>setQuantity(e.target.value)}></input>
+            <label for="quantity">Quantity:</label>
+            <input
+              type="number"
+              id="quantity"
+              name="quantity"
+              min="1"
+              max={stock}
+              value={quantity}
+              onChange={(e) => setQuantity(e.target.value)}
+            ></input>
           </div>
           <Modal
             size="sm"
@@ -143,7 +152,14 @@ export default function ShirtPage() {
               <p>You may also like</p>
               <div className="d-flex">
                 {similarShirts.map((shirt, index) => (
-                  <Link to="/" key={index + shirt.name + toString(Math.floor(Math.random() * 999))}>
+                  <Link
+                    to="/"
+                    key={
+                      index +
+                      shirt.name +
+                      toString(Math.floor(Math.random() * 999))
+                    }
+                  >
                     <Image src={shirt.img[0]} fluid alt="sample shirt" />
                     <h5>{shirt.name}</h5>
                   </Link>
@@ -151,7 +167,9 @@ export default function ShirtPage() {
               </div>
             </Modal.Body>
           </Modal>
-          <Button onClick={addToCart} disabled={ stock === 0?  true : false }>Add to cart</Button>
+          <Button onClick={addToCart} disabled={stock === 0 ? true : false}>
+            Add to cart
+          </Button>
         </Col>
       </Row>
       <Row>
