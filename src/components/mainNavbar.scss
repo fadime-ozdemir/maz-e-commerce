@@ -1,0 +1,18 @@
+@import "../style/variables";
+@import "../style/buttons";
+@import "../style/bootstrapImports";
+
+.navbar {
+    background-color: $primaryColor;
+    &-light,
+    &-nav,
+    &-brand,
+    .nav-link {
+       color: $primaryColor-light !important;
+
+       &:hover {
+        color: $secondaryColor !important;
+       }
+   }
+   
+}

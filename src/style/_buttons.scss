@@ -18,10 +18,3 @@
       color: $secondaryColor;
     }
   }
-  
-  @mixin normalLink {
-    color: $primaryColor;
-    &:hover {
-      color: $primaryColor;
-    }
-  }
